@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawin Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+        font-family: "Kanit", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        background-color: #1f2833;
+        color: #66FCF1;
+        
+        }
+        header, footer{
+            background-color: #0b0c10;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #66FCF1;;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: .3s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: #babbbb;
+            transition: .5s ease-in-out;
+        }
+
+        main {
+            padding: 20px;
+        }
+        main a {
+            text-decoration: none;
+            color: #66FCF1;
+        }
+        main h2{
+            text-align: center;
+        }
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #c5c6c7;
+            background-color: #333;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #0b0c10;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        #aboutme {
+            padding: 20px 200px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Resume</h1>
+        <p>Welcome to my personal resume page!</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#skills">Skill</a></li>
+            <li><a href="#experience">experience</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="aboutme">
+            <h2>About Me</h2>
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0NDQ0PDw8NDQ4NDQ8PDg0NFRUWFxURFxUYHSggGBolGxUVITEhJSkrLi4uFx8/ODMsNygtLisBCgoKDg0OGhAQGCsdHR0tLS0tLS0tLS0tKysrLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tKy0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAABAgAFBgcEA//EAEAQAAICAQEFBAcECAUFAQAAAAABAgMRBAUGEiExE0FRcSJhgZGhscEUMnLRByMkMzRCUqIVYrLh8FNUc4LCJf/EABkBAQADAQEAAAAAAAAAAAAAAAABAwQFAv/EACoRAQACAgEDBAEEAgMAAAAAAAABAgMRBBIhMTIzQVETImFxgVKRI0LB/9oADAMBAAIRAxEAPwDkYEAgEAgEAgBAgEAIEAgESy0lzb5JLq36kB6f8N1X/a6rHj9ntx/pPPXX7j/cJ6Z+iT0l0fvU2x/FVNfNE9UfZqfp8ZLHXl58iUFjJPo0/JjQIEAgAAgEAgEAgEAgEAgEAgEAIEAIEAIEwBMAHAG+3H1HYUxdcIKcm3KbinN9eWfD1HO5XezfgpHQ3Wy9qTsyp4fPuSRjr3nutvSI8Lrt4r+Qv6Kx8Ke8lnq4cLfZo8TePpPRP2pdqrSWwfbaSi1PunVCfzREZJjvWZh6/HE+XIN69BVp9Vw0RcK5wjYoOTlwNuSaTfPHLvOpx7zem5Y81IpbUKYuVIAAIAAIBAIBAIBAIBAIAQCBADgA4AmADgCYAhKHSdi7KtqoqThLPCm+T645/E5We3VaZdTFGqxDQ7Gqeeaaee9YMtfKzI0DreF5s0zHZnh8rK3wszyshU6lciIe3Md+f4qH/iS/ukdTiehh5XrZ3BqZwwAAIAAABAIBAIBAIBACAQCAcATABwAcATBKBwBbbF2utI1KNFc7E8uyUeKS9Sf8qKr16u0rsdun4dT3O3po10ZxkuC2EeJwbzleKfgZMmOK918W6vA7Q3y0unnJODk1/TGPXzZGOkT3erbh4I/pK0zaXZ2x9cowcfhgsnHEvMS0Gzdu6fVrEWua7n3+T6FFsL1vT57VojXHPH60u8otWKraW25Pvs86qPqrx8WdDh+hl5XqhnsGplDASgAAAAAAEAgEAgEAIBAKAOADgA4JQOADgCYAOANl+j7Z0L7HXPUSpdv7tQrqk202lxSmnyzySS+hVkja2ltLjbux1otTTqKlGF8LI1alVR4a9RTY8RtUF915yml3rPgZ8nekwvx+dvJtbZfFqKqo8ObcTl2j4VGCWZNy7ujK8O+lbeYaPT7uz+zJ1aDZ2oi1zdd7dkvbOGH7WXzWdKOuN94ZyWz1TYrdKp04s7O/Tz+/p7fD8LXs8CrrmJ1K6IiY7NBrrLHWlY05qEVJxzh+vmYbTuy6kahzjevnqI/g/wDqR0+J6GLletS4NTMGAAQkMAAAAAAAQCAQAgEAgFANglAgHABwAcAHAEwBa7Iunpr6ZuMnKKjdXFYxhvMZP1d5VedxOltI+232RfPaerqlN8bry5yX3I5aahnveUvczHk3Ean5aaah5t/4OnURtjhRsi6sS5R4o88Z7so98e3aY+kZI3H8rzdPeZ16eMNTNSvnJtcL4vQwoxT8ki38sb7Kvxzp6lXXrNTKyEG5pKNli5RwukW+9rn7yjJO11I6Y7vPtXTyipcnhYWfJGHU7aYns5nvPz1C/Av9Ujq8X0MPJ9f9KjBpZgwAAFaIACQAAAAAEAIBAKAKAYlAoApAMkAcAHABwBMAb7QarZmsopWphDtK4Rg0+TSXLHrRzbTkxWmIb6xW8RLbbraWlVuyiEYVLlDhXJrpn5+8816rT1W+C+o7Q+e8uyqNdVKiyfBPKsrmsZhNZw+fmyK5Oi+zp3VRbH3OthJqzV1Rr73TTXXZKPhxdV7MF05qz4eYiYbHTLT6atVUpRhFd3eUXy18Q9ame8s5vVt2uMFXXKLnJtKKeW30WfeeeubzqPCytNd5cw3hWL0vCuPzkdDjehk5PrVbRoZwwAuAAwA0ArISDAAAAADAFAFAMgCiUCgGSAZIA4AOADgA4A++hohZdVCyarhKcYzm3hRi+rPGTtWZe6edO36faug0mlrirqYVRWElOL5JJJLHqwc+L9taa+ids1r7v8V7S3QWyhKnEYzkv1Vsurh8uZX06tu8eVkTquoY/XbY2rp5dna51NcuUeT8n3l1cOO3hXOS0eXn/wAb1Uvv2WPzk8e4icFYe65JenZsZ22dpPpDLXn3Hm0RWNQsjcztW7w/xH/pH6m3jehi5PrVmC9nK0AGgFYAYAZCSsAMAAAAgMgCgGRKBQDJAMkAUgGSAKRIOADgA4AfTaCy6UYxUpKUsJLOH6ngqtqF1eqf4dM0Oz9ZptPCpS0+kqisZhF2Tz45k8NvPcmYb1pvdp20Vm3iILdoaq4OU5WXWy5uy+SlPHgkuUV6kV3yajVeyytVA9j9rJ2cox7klgj8sxGlkUiXslp41RUYrC5+bZ53t61pk94P4iX4YfI6XG9tzuR61a0XqCtABoBWgFaADAVkJBgKBACgGQBRKDIBkAyQBSAZIBkiQcAHABwAcAWGxdZZRZxVWKubWE3zT/3M+fxtowT8NnoLYr9p1+q7Wa/c0Zys90mkYZmsd/MtX6vEHd0tTPPC1F978DPM99ysiNPtfWl6K5JJL28jysq8Gr+pZVDHbd/ibPUoL+1HW4/tw5mf3JV7RcpK0QFaADAVoBWArAVkJBgABkAUAyJQZAMgGQDIBkiQUgGwAcAHABwAHHLSPNnqrQ7C2Y5elY20ukc/M5me0R4b8W9d5bGp/dXTGPkZF0QTUfe930EPceDaTY8dVTZPtlCUW+CLWU8dc+fP3FldPFranWnOdtJ/ars9VJL3RSOtg9uHNzeuXgaLlQMBWQFYCsBWArAVkJBgAAoBkSgyAZAMgGQDIkMgGQBQDJAHAEwA2haeow+6KfxX5ld5WUbPZZysvl0KeFzB+kvJfIoWfAX9fYvkIeo8Phu7qnK3UUeC44+T/wCM9Xr2ift5sw+8VfBrdRF/1p++Kf1Oxg9uHLzeuVay5WVoBWArICsBWArAVgKyEgAyAZEoMgGQDIBkAyJDIBkAyAKAIBATRprVLwlCX0/Irv4WU8trs76HKy+XRp4XFL9JeRRKz4DVPr5fQJhS7I7SG1YuOGp1NSTePRT6/wBxfOpxf28X9f8ASi3qkpa/UtYa40uXNcoxR0uN7UObm9cqhl6orAVgKyArAVgKwFYCshIBAoJMiUGQDIB0AyAZEhkAyAZAFAEAgWK0q4NLbj/qRb9j/IotPeYX1jtEtBoeq5+w5uVtp4W9XVeRQsjwGq/IPdXj2LWnrJ2tejVRY5ecnFJfB+4vntjV39TF7Wu7XU32d0rJY8lyXyOpgr046x+zmZZ3eZeNlqsrAVgKyArARgKwFYCsgAJMggUSHQDIBkA6JDIBkAyAZAFAEIEDURq//N0k8cnZYuJdzTksP3GO0/8AJaGykfoh99A+a8jFl8tVPC3r6x8vqUvcPjtGxRWWREd1lfD4Xzek2dO18rtU8pPrGtZ4U/e2aIiL2rVnvOt2+mCOw5YMBWArAVgIyArAVgIwAwAQCiQyAZAMgHQDIkMgGQDIBkAUAwQgF3svaSWllpZqTXbK2tpeim4tST8PFGPkUnqi0NnHtuJqstF1RkytNPC6q+9HyM6yPDyK/Ty1lML5LhdijCD6Ts5tZ9XL5FlKzrZe2o0+P6QdX2jrjF5hFT6dE8YRdxu+TbPljVGGZ1XPKwFYCsBWArICMBWArAVgAAoBkAyAZAOgGRIZAMgGQDIBkAQPrpdNZdZCmqLnZZJQhFdXJ/8AOpEzERuSI21G80Ktn0afZ9XBZan2+psx9+zGPYu5epesw44nPebz2jxDX1fhrEfMqnSbwUxnw2qcMY9LHFH4c/gRl49vju90zV137L2nb2jlhxvhyyn1WPgZfwZP8V0Zafal1O0NNG+Wri1ddBSWnxzhGU8pzfi0s+80Vpbp6PG3m1qzbq+lbqNoTtjiXR9fFvq2acODpnbNmzdUdLyM0sxWArAVgKwFZARgKwFYCsgAkFEJMiUGQDIBkA6JDIBkAyAZAEAhDoG7mhr2Vop7S1Mf2iyGKIPk4Vy6LH9Uvgvac/Pect4x18NWKkVjqsw2s1U77J22PM5ycpP6eRupWKxqFF7Tady892jk63bwvD4uF9zx1KLX1fTRWm6PlpI4i/P6F9PCjJ5ajY+wVZTXLiXC68t/5ufI5eTNMWl0KUjUKPW0Oq2db6xeDp4rdVIlz8savMPOz28FYCsBWArARkBWArAVgKyElAKCDIkMgHQDIBkA6JBQDIBkAyA1m4e7q1dr1N6/ZaHlp9LbFzUfJcs+z1mXk5uiOmPP/i3FTqnb5797ces1PZwf6mluMcdJWdHL2dF7TzxMeq9c+Ze89v8ApHwzJsZmm2NqVbopaZ1xcYOalJvm3LMsr3/A5fJ3XLt0uPqaM3dp3VKUGsNPPsN+G0WruGTPXV213TU3pVmLwm0n1XCcvkxrJLbindIZbeB51dz9a+SR0+P7cMOf1yrWXKisBWArAVkBWArARgKwFZCQAKAZEoMgGQDIB0AyJDIAoBkB7dkbOs1mor09S9Kb5vGVCPfJ+R4yXileqU1rNp06PvTrq9mbPhpNNiLcezhjq33z8+rz4s5eOJz5O/8AMt06x06v9OXHXYJnY5At93E3ZNJ9Uso5/NjxLdxJ7Sm9DX2jkseiizheh45fmFtuxtmcaY0wqcuCWJSUsdeafu+Rn5VNXmVuCd0hQbenxXuWMOUVJr15Zt43oZuR6/6VrL1BWAGArAVkBGArAVgKwFZCQCEQSZEoMgGQDIB0AyJDIAoBsgdV3J2MtBpXqbljUXRy89a4d0PPvZyeVm67ajxDbhx6j95YLebar1mqnPOa4twr/D3y9v5G3i4uinfzKnkX6rajxCqNKhMgWm7tmL0vFP6GPmx+jbVxJ/VMPtvSv1tb8Yte5/7jhemU8vzD2bmtYu80/bhlPM9SzjehUbff7RLyX1NXF9tRyfcVrZoZysAMBWArICMBWArAVgBkJKAUAyCBRIZAMgGQDIBkyQyYGt3A2B9qvWptj+opknFNcrLV09i+fkzJys3RXpjzK/Dj3O5abf7a/ZaeVUHiU/1cceH8z93IwcfH+TJEfENd7dFJs5edpzRyAcge7YeftNSXe2vgzPyvalfxp/5FpvfU06pd3pL34f0ZRwZ7TC7lx2iU3QfO1eT+Z55sd4euL6VVt1/tNns+Rp43twz8n3JV2TQoBsBWwFZAVgKwFYCsAMhJWAAIgGQBRIZBBkAyAZMBkwPfsXZs9ZfCiGVnnOS/kgur+nm0eMmSKV3L3Sk2nTslFFei00a64qMYrhil4nEyXm07l0KVjxDlm92v7fUtJ5jWuFefezo8HH00m32o5du8V+lJk3MaZAmQNluTu7ZOS1VsXCvH6pPk5Z6z8vDxMXKyRMdEf21cemp6penfjTYp5c8SUk/FJ4z7mZ+JOr6X543jV25OmlJ2NLKaa92Czmz3iHni9q7/AHU+8tLr1lsZf5WvLhX5M08Wd4oZ+R7kqts0KCtgBsgKwFYCtgKwAwFZCSsAARAMgCgGRKDIBkwCmA2QOtbhbC+y0dpZHF1uJTz1iu6HsT97ZyuTl67ajxDdip017+ZTfPa6qhJRf3U0vxsz0p13iIaYmK1m0uVTm5Nt9W8s7laxWNQ5VrTaZmfl99Hor73w0U2WvpiuEpYfsFrVr5nSIrM+IXuzNy9dfLE4LTw75WtOXsivrgptyaR47ra4bT57N1sXc3RaVKUodvYufaXJPD9UeiMl897fOoX1x1qttTqIwTaworvMtrr4qwO9uv41OOcrgaRo41e8T+6M3akw0W4uzZUaaLthiTi3h/ezJ5GW0XvMvFYmtIhnf0lbPSshqa1y/dWfOL97a9qNHFvG5pCnPWdRZh2zaylbIAbAVsANgKwFYCsgBhJQIBACgCgGRKBQDJgMmB79h21Q1dE71muM1KS68191+vDw/YV5YmaTFfL3j11Rt2izaVMdN2tVkbIuPouL+fg/Uca8TXs6Nf1S5PvPtJ3W8CeYxeX65M6HDxdMdUqOVl/6QqdKouytTbUHOKk0k2o55my29Tpjrrcbdi0lNdMYRjhZjmuNWOeVzcYR5Lz+BybXdKK6W2nXBGKkserOX7WeIt9olW7X2/Tp24zshHuackj1+PJf0x2OqtfMuf7Z3xsulipJVrpxLr7DRj4P+cqrcqI9MPbuhs23WWfbNTzri8UprEZzXWWPBfPyJzdOOvRUxza89dnSKa1GJliFkyxm/lq7C1S6OKS/FlY+OCzBMzkjRkiPxztzLJ1XOBsBWwA2ArAVgBkJKwAwAAAIAQCgGQBRKBTAZMApgeinV2wWIzkl6pPBXbFS3mFlctq+JfJybbb5t82/FlkRp4md95HIQtdk7xavSNuqzOYqGLMySS6d5TfBS3xr+Ftc1o/f+T6/ejaGo5Wamaj/AE14rX9vP4k1wY6/CJy3n5VDlnLby+9vqy1W2G7u5U7lC3Vt1wnHtIUQ/ezh/VJ/yR+PkZcvJ12qvph33s6Fpq4VQjGGFXXFJRUEklj0cY6RRgm0zPdriPiH2+0PpJNPCl0wlFvCb8O73jZpzb9Ie0eK1aaP8uLJPu5rkjXw8fm6nk37RVjsm5jK2AGwBkBQAwAyElYAAAEAgEAIDIAoAolApgFMA5AOQDkA5AmQJkDQbO3v1mnUlxcacFXzeMJdH059TPfj1t+y+ueY89xu3x1slZFTUYzhGDXN44e9esiOLSEzyLfEPjfvXrp8WbccVaqbWcqK55Tz19ZMcbGieRdTXXSsk5zk5zlzcpPLbL4iIjUKZmZncvnklANgDIAyAAkGQFAAAAgAAgBAgBAIByA2QDklCZAOQDkA5AmQJkCZAmQJkAZAGQJkAZCQyEAQkoAAAEAAEAgEAKAKAKAKAIQJIgSIQIEAIEAgEAAEADAgAABAASDADADAAEAgH//Z" alt="Profile Picture">
+            <p>Hi, my name is Kawin Pakokthom. I am ZIP student.</p>
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:kawinpakokthom@gmail.com">kawinpakokthom@gmail.com</a>
+            
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Position</th>
+                        <th>Company</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2023</td>
+                        <td>Canva end Developer</td>
+                        <td>ABC Corp</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>Frontรำ Developer</td>
+                        <td>XYZ Ltd</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="video" role="video">
+            <h2>Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hlh6RnnoWnQ" 
+            frameborder="0" allowfullscreen>
+            </iframe>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Kawin Pakokthom.</p>
+    </footer>
+</body>
+</html></iframe>
