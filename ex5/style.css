@@ -1,17 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+    /* Light Theme Colors */
     --main-color: #3498db;
-    --secondary-color: #2ecc71;
     --text-color: #333;
     --background-color: #5cbbfb;
+    --secound-bg-color: #fff;
+    --card-shadow: rgba(0, 0, 0, 0.2);
     --font-family: 'Roboto', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme Colors */
+        --main-color: #1e90ff;
+        --text-color: #e0e0e0;
+        --background-color: #121212;
+        --secound-bg-color: #1e1e1e;
+        --card-shadow: rgba(255, 255, 255, 0.1);
+    }
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
+    color: var(--text-color);
     font-family: var(--font-family);
 }
 
@@ -21,9 +35,8 @@ header {
     align-items: center;
 }
 
-
 main {
-    max-width: 1080px;
+    max-inline-size: 1080px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -32,36 +45,38 @@ main {
     border-radius: 8px;
 }
 
+/* Filter */
 .head {
     display: flex;
     gap: 20px;
-    top: 0;
+    inset-block-start: 0;
     border-radius: 5px;
-    border-bottom: solid 1px var(--background-color);
+    border-block-end: solid 1px var(--background-color);
     justify-content: center;
     align-items: center;
-    padding: 15px 0 15px 0;
-    width: 100%;
-    background-color: white;
+    padding-block: 15px;
+    inline-size: 100%;
+    background-color: var(--secound-bg-color);
 }
 
 .dropdown {
     position: relative;
-    width: 100%;
-    max-width: 200px;
+    inline-size: 100%;
+    max-inline-size: 200px;
     gap: 20px;
 }
 
 .dropdown select {
-    width: 100%;
-    padding: 16px 0px 16px 16px;
+    inline-size: 100%;
+    padding-block: 16px;
+    padding-inline-start: 16px;
     text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--secound-bg-color);
     cursor: pointer;
     font-size: 16px;
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -72,46 +87,57 @@ main {
 
 .dropdown label {
     position: absolute;
-    top: -8px;
-    left: 10px;
-    background-color: white;
-    padding: 0 5px;
+    inset-block-start: -8px;
+    inset-inline-start: 10px;
+    background-color: var(--secound-bg-color);
+    padding-inline: 5px;
     font-size: 12px;
     color: #999;
 }
 
 .pokemon {
-    width: 100%;
+    inline-size: 100%;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 }
 
+/* Pokemon Card */
+
 .card {
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--secound-bg-color);
     gap: 0;
     padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:focus-within {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px var(--card-shadow);
+    outline: none; 
 }
 
 .card img {
-    margin: 10px;
-    width: auto;
-    max-width: 180px;
-    height: auto;
-    max-height: 180px;
+    margin-block: 10px;
+    inline-size: auto;
+    max-inline-size: 180px;
+    block-size: auto;
+    max-block-size: 180px;
 }
+
 .card h2 {
     font-weight: 400;
     margin-block: 0;
 }
-.card p{
+
+.card p {
     margin-block-start: 0;
     font-size: 14px;
     color: #898989;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .switch {
@@ -123,15 +149,15 @@ main {
 
 .switch input {
     opacity: 0;
-    width: 0;
-    height: 0;
+    inline-size: 0;
+    block-size: 0;
 }
 
 .slider {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 15px;
+    inline-size: 40px;
+    block-size: 15px;
     background: #e0e0e0;
     border-radius: 10px;
     transition: 0.3s;
@@ -140,35 +166,29 @@ main {
 .slider:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
-    left: 0px;
-    bottom: -2px;
-    background-color: white;
+    block-size: 20px;
+    inline-size: 20px;
+    inset-inline-start: 0px;
+    inset-block-end: -2px;
+    background-color: var(--secound-bg-color);
     border: solid 1px #e0e0e0;
     border-radius: 50%;
     transition: 0.3s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background: #999bcd;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     border: none;
     background-color: #4448a0;
     transform: translateX(20px);
 }
 
 .switch-label {
-    margin-left: 8px;
-    color: #444;
-    font-size: 14px;
-}
-
-.switch label {
-    margin-left: 8px;
-    color: #444;
+    margin-inline-start: 8px;
+    color: var(--text-color);
     font-size: 14px;
 }
 
@@ -177,14 +197,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-block-start: 20px;
     gap: 0px;
-    padding: 20px 0;
-    background-color: white;
+    padding-block: 20px;
+    background-color: var(--secound-bg-color);
 }
 
 @media screen and (max-width: 768px) {
     .pokemon {
-        grid-template-columns: repeat(auto-fill, minmax(200px,1fr ));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
