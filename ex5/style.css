@@ -34,6 +34,9 @@ header {
     justify-content: center;
     align-items: center;
 }
+header img {
+    inline-size: 30%;
+}
 
 main {
     max-inline-size: 1080px;
@@ -204,6 +207,10 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    header img {
+        inline-size: 100%;
+    }
+
     .pokemon {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
