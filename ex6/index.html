@@ -134,14 +134,19 @@
             </ul>
             <ul class="legal-links">
                 <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Consumer Health Privacy Notice</a></li>
                 <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Do not Share My Personal Infomation</a></li>
                 <li><a href="#">CA Supply Chain Act</a></li>
+                <li><a href="#">Accessibility</a></li>
                 <li><a href="#">Cookie Preferences</a></li>
             </ul>
             <p>&copy; 2025 Kawin</p>
         </div>
     </div>
     </footer>
+
+
     <script>
         function myFunction() {
             var x = document.getElementById("myLinks");
@@ -157,6 +162,44 @@
                 y.style.display = "block";
             }
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            const columnHeaders = document.querySelectorAll('.column h3');
+            const columnBtn = document.querySelectorAll('.column h3::after');
+            
+            columnHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const columnList = this.nextElementSibling;
+                    const isActive = columnList.style.display === 'block';
+                    
+                        if (columnList.style.display = isActive) {
+                            columnList.style.display = 'none';
+                            this.classList.remove('active');
+                        } else {
+                            columnList.style.display = 'block';
+                            this.classList.add('active');
+                        }
+                    
+                });
+            });
+            window.addEventListener('resize', function() {
+                const columnLists = document.querySelectorAll('.column ul');
+                const columnHeaders = document.querySelectorAll('.column h3');
+                
+                columnLists.forEach(list => {
+                    if (window.innerWidth >= 768) {
+                        list.style.display = 'block';
+                    } else {
+                        list.style.display = 'none';
+                    }
+                });
+                
+                columnHeaders.forEach(header => {
+                    if (window.innerWidth >= 768) {
+                        header.classList.remove('active');
+                    }
+                });
+            });
+        });
         </script>
 </body>
 </html>
