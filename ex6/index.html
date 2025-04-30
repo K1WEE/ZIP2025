@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <span class="logo">LOGO</span>
+                <ul id="myLinks">
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Rewards</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </nav>
+            <div class="actions" id="actions">
+                <a href="#" class="find-store">Find a store</a>
+                <a href="#" class="sign-in">Sign in</a>
+                <a href="#" class="join-now">Join now</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+        <section class="first">
+            <div class="first-content">
+                <h1>The Spring Edit</h1>
+                <p>Fresh flavors, familiar joy.</p>
+                <a href="#" class="btn">View the menu</a>
+            </div>
+            <img src="image_1.png" alt="Spring Drinks" class="hero-image">
+        </section>
+
+        <!-- Promotions Section -->
+        <section class="promotions">
+            <div class="promotion">
+                <img src="image_2.png" alt="Promo 1">
+                <div class="promo-content">
+                    <h2>It starts with free</h2>
+                    <p>Enjoy a free handcrafted drink when you make a qualifying purchase during your first week as a AAA® Rewards member.</p>
+                    <a href="#" class="btn">Join now</a>
+                </div>
+            </div>
+            <div class="promotion">
+                <div class="promo-content">
+                    <h2>Nondairy milk, no extra charge</h2>
+                    <p>Customize your drink with your favorite nondairy milk—like soy, coconut, almond or oat—for no additional charge.</p>
+                    <a href="#" class="btn">Order now</a>
+                </div>
+                <img src="image_3.png" alt="Promo 2">
+            </div>
+        </section>
+        <!-- Fine Print -->
+        <div class="fine-print">
+            <p>*Valid for new AAA Rewards members for 7 days from sign up. Coupon will be available in the offers tab of your AAA app following sign up and may take up to 24 hours to arrive. Good at participating U.S. locations only and expires 7 days after receipt. Limit one per person. Cannot be transferred. Qualifying purchase excludes alcohol. AAA Card and Card rewards. Limit one. Cannot be combined with other offers or discounts. Excludes delivery services. Sign-up before 6/29/2025.</p>
+            <br>
+            <p>**Free refills of hot and iced brewed coffee or tea during same store visit. Excludes Cold Brew, Nitro Cold Brew, iced Tea Lemonade, and flavored iced tea and AAA Refreshers base. At participating stores. Visit https://aaa.com/refills to learn more</p>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+        
+        <div class="footer-links">
+            <div class="column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Our Coffee</a></li>
+                    <li><a href="#">About AAA</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Careers</h3>
+                <ul>
+                    <li><a href="#">Culture and Values</a></li>
+                    <li><a href="#">College Achievement Plan</a></li>
+                    <li><a href="#">U.S. Careers</a></li>
+                    <li><a href="#">International Careers</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Social Impact</h3>
+                <ul>
+                    <li><a href="#">Communities</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Environmental and Social Impact Reporting</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>For Business Partners</h3>
+                <ul>
+                    <li><a href="#">Landlord Support Center</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                    <li><a href="#">Corporate Gift Card Sales</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Order and Pick Up</h3>
+                <ul>
+                    <li><a href="#">Order on the App</a></li>
+                    <li><a href="#">Order on the Web</a></li>
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Explore and Find Coffee for Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul class="social-links">
+                <li><a href="#"><i class="fa fa-spotify" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul class="legal-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">CA Supply Chain Act</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+            </ul>
+            <p>&copy; 2025 Kawin</p>
+        </div>
+    </div>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block" ) {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+            var y = document.getElementById("actions");
+            if (y.style.display === "block" ) {
+                y.style.display = "none";
+            } else {
+                y.style.display = "block";
+            }
+        }
+        </script>
+</body>
+</html>
