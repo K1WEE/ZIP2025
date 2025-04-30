@@ -41,6 +41,7 @@ header .container {
 }
 nav ul{
     display: inline-flex;
+    flex-direction: row;
     gap: 1em;
     list-style: none;
 }
@@ -305,16 +306,27 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items:flex-start;
+    }
     nav ul {
-        display: none; /* Hide nav menu on mobile */
+        display: none;
+        padding: 0;
+    }
+    nav ul li {
+        list-style: none;
+        margin-block: 10px;
     }
     
     .actions {
-        display: none; /* Hide actions on mobile */
+        display: none;
     }
     
     .icon {
+        position: absolute;
         display: block;
+        inset: 20px 20px auto auto;
         font-size: 24px;
         color: var(--font-color);
     }
@@ -332,6 +344,9 @@ footer {
 
     .footer-links {
         flex-direction: column;
+    }
+    .footer-links .column {
+        inline-size: auto;
     }
     .column h3 {
         font-size: 1rem;
@@ -354,4 +369,7 @@ footer {
     .footer-links .column ul {
         display: none;
     }
+
+    
+    
 }

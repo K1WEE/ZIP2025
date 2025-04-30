@@ -13,7 +13,11 @@
     <header>
         <div class="container">
             <nav>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
                 <span class="logo">LOGO</span>
+                
                 <ul id="myLinks">
                     <li><a href="#">Menu</a></li>
                     <li><a href="#">Rewards</a></li>
@@ -25,9 +29,7 @@
                 <a href="#" class="sign-in">Sign in</a>
                 <a href="#" class="join-now">Join now</a>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
+            
         </div>
         
     </header>
@@ -161,6 +163,16 @@
             } else {
                 y.style.display = "block";
             }
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    x.style.display = "inline-flex";
+                    y.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                    y.style.display = "none";
+                }
+            });
         }
         document.addEventListener('DOMContentLoaded', function() {
             const columnHeaders = document.querySelectorAll('.column h3');
