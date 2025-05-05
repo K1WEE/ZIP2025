@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body class="bg-[#1b1f24] text-slate-100 w-screen">
+    <header>
+      <nav
+        class="container mx-auto py-4 px-4 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <h1 class="text-white text-xl font-bold">DigiTech</h1>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#hero" class="text-gray-300 transition hover:text-white"
+            >Services</a
+          >
+          <a href="#" class="text-gray-300 transition hover:text-white"
+            >Case Studies</a
+          >
+          <a href="#" class="text-gray-300 hover:text-white">Articles</a>
+        </div>
+        <button class="text-white px-4 py-2 rounded-md border-[0.3px]">
+          Let's Talk
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="container mx-auto px-4 text-center relative h-[calc(100vh-64px)] flex items-center justify-center"
+        id="hero"
+      >
+        <div class="max-w-2xl mx-auto my-auto justify-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Powerful and easy to use app creation platform
+          </h1>
+          <p class="text-gray-300 mx-25 my-8">
+            We specialize in creating visual identities for your company's
+            products and brands
+          </p>
+          <button
+            type="button"
+            class="cursor-pointer bg-white text-black px-3 py-2 rounded-lg"
+          >
+            Get started
+          </button>
+          <button
+            type="button"
+            class="cursor-pointer bg-indigo-100/10 px-3 py-2 rounded-lg ms-2"
+          >
+            Play Video
+          </button>
+        </div>
+      </section>
+      <div
+        class="absolute z-0 h-300 w-160 end-0 translate-y-[-20%]"
+        style="
+          background-image: radial-gradient(
+            circle at 100% 50%,
+            #bb404c,
+            transparent,
+            transparent
+          );
+        "
+      ></div>
+      <section id="images" class="h-100vh items-center">
+        <div
+          class="flex w-full snap-x gap-4 overflow-x-auto py-14 h-auto items-center"
+        >
+          <div
+            class="relative shrink-0 snap-center scroll-ml-2 first:pl-2 last:pr-[calc(100%-21.5rem)]"
+          >
+            <img
+              src="img/cat.jpeg"
+              class="h-75 w-90 rounded-2xl object-cover"
+            />
+          </div>
+          <div
+            class="relative shrink-0 snap-center scroll-ml-2 first:pl-2 last:pr-[calc(100%-21.5rem)]"
+          >
+            <img
+              src="img/cat.jpeg"
+              class="h-130 w-75 rounded-2xl object-cover"
+            />
+          </div>
+          <div class="relative shrink-0 snap-center scroll-ml-2 first:pl-2">
+            <img
+              src="img/cat.jpeg"
+              class="h-75 w-90 rounded-2xl object-cover"
+            />
+          </div>
+          <div
+            class="relative shrink-0 snap-center scroll-ml-2 first:pl-6 last:pr-[calc(100%-71.5rem)]"
+          >
+            <img
+              src="img/cat.jpeg"
+              class="h-110 w-75 rounded-2xl object-cover blur-sm"
+            />
+          </div>
+        </div>
+      </section>
+      <div
+        class="absolute -z-10 h-350 w-260 start-0 translate-y-[-6%]"
+        style="
+          background-image: radial-gradient(
+            circle at 10% 50%,
+            #bb404c,
+            transparent,
+            transparent
+          );
+        "
+      ></div>
+
+      <section id="Features" class="container mx-auto px-6 py-20 min-h-screen">
+        <div class="block md:w-5/12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            We bring everything that's required to build apps
+          </h2>
+          <p class="text-gray-400 mb-12">
+            We specialize in creating visual identities for products and brands
+            in your company.
+          </p>
+        </div>
+        <div
+          class="flex w-full h-auto snap-x overflow-x-auto py-10 gap-8 items-center"
+        >
+          <div
+            class="card col relative shrink-0 snap-center scroll-ml-2 last:pr-[calc(100%-71.5rem)] flex flex-col items-center"
+          >
+            <div
+              class="bg-green-500/5 w-30 h-30 flex items-center justify-center rounded-full my-9"
+            >
+              <div class="bg-green-400 w-10 h-10 rounded"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-black">Brand Identity</h3>
+            <p class="text-gray-400 mb-4">
+              Get your business brand perfectly crafted with a unique design
+              flow from your brand roots.
+            </p>
+          </div>
+          <div
+            class="card relative shrink-0 snap-center scroll-ml-2 first:pl-2 last:mr-[calc(100%-21.5rem)] flex flex-col items-center"
+          >
+            <div
+              class="bg-blue-500/5 w-30 h-30 flex items-center justify-center rounded-full my-9"
+            >
+              <div class="bg-blue-400 w-10 h-10 rounded"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-black">Web Design</h3>
+            <p class="text-gray-400 mb-4">
+              Get your business brand perfectly crafted with a unique design
+              flow from your brand roots.
+            </p>
+          </div>
+          <div
+            class="card relative shrink-0 snap-center scroll-ml-2 first:pl-2 last:mr-[calc(100%-51.5rem)] flex flex-col items-center"
+          >
+            <div
+              class="bg-red-500/5 w-30 h-30 flex items-center justify-center rounded-full my-9"
+            >
+              <div class="bg-red-400 w-10 h-10 rounded"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-black">Mobile App</h3>
+            <p class="text-gray-400 mb-4">
+              Get your business brand perfectly crafted with a unique design
+              flow from your brand roots.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="container mx-auto px-4 py-16 relative min-h-screen">
+        <div class="block md:w-5/12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            More than 50 awesome active projects
+          </h2>
+          <p class="text-gray-400 mb-12">
+            We specialize in creating cloud solutions for products and brands in
+            your company.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col items-center">
+            <img
+              src="img/cat.jpeg"
+              alt="Image 1"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="flex flex-col items-center">
+            <img
+              src="img/cat.jpeg"
+              alt="Image 2"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="flex flex-col items-center">
+            <img
+              src="img/cat.jpeg"
+              alt="Image 3"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="flex flex-col items-center">
+            <img
+              src="img/cat.jpeg"
+              alt="Image 4"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+      <div
+        class="absolute -z-1 h-300 w-160 end-0 translate-y-[-50%]"
+        style="
+          background-image: radial-gradient(
+            circle at 100% 50%,
+            #bb404c,
+            transparent,
+            transparent
+          );
+        "
+      ></div>
+
+      <section id="Test" class="container mx-auto px-4 py-16 relative min-h-screen">
+        <div class="bg-gray-100/5 shadow-md rounded-lg p-8">
+          <h2 class="text-3xl font-bold my-6 text-center">
+            What our client's say
+          </h2>
+          <p class="text-gray-400 mb-12 text-center md:w-100 mx-auto">
+            I never saw sites where the teams is quite and building apps is free
+            and requires a small and time to deploy.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-3 rounded-lg shadow-md md:col-span-2">
+              <h3 class="text-yellow-300 font-bold">Starter</h3>
+              <p class="text-black my-6">
+                "I never saw sites where the teams is quite and building apps is
+                free and requires a small and time to deploy."
+              </p>
+              <div class="flex items-center mt-18">
+                <div class="w-10 h-10 rounded-full bg-gray-600 mr-3"></div>
+                <div>
+                  <h4 class="text-black font-bold">Kawin Pakokthom</h4>
+                  <p class="text-rose-600 text-sm">Founder</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg shadow-md">
+              <h3 class="text-yellow-300 font-bold">Starter</h3>
+              <p class="text-black my-6">
+                "I never saw sites where the teams is quite and building apps is
+                free and requires a small and time to deploy."
+              </p>
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gray-600 mr-3"></div>
+                <div>
+                  <h4 class="text-black font-bold">Kawin Pakokthom</h4>
+                  <p class="text-rose-600 text-sm">Founder</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg shadow-md">
+              <h3 class="text-yellow-300 font-bold">Starter</h3>
+              <p class="text-black my-6">
+                "I never saw sites where the teams is quite and building apps is
+                free and requires a small and time to deploy."
+              </p>
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gray-600 mr-3"></div>
+                <div>
+                  <h4 class="text-black font-bold">Kawin Pakokthom</h4>
+                  <p class="text-rose-600 text-sm">Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="values" class="container mx-auto px-4 py-16 relative">
+        <div class="mx-6 grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="flex flex-col md:w-110">
+            <h2 class="text-3xl font-bold mb-4">Our company values culture ❤️</h2>
+            <p class="text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae accusamus veniam, soluta perferendis minima doloremque fuga magnam similique molestiae </p>
+          </div>
+          <div class="flex flex-col gap-5 text-center">
+            <div class="inline">
+              <span class="bg-white text-gray-900 px-4 py-2 rounded-full">Be yourself</span>
+              <span class="bg-white text-gray-900 px-4 py-2 rounded-full">Discover together</span>
+            </div>
+            <div class="inline">
+              <span class="bg-white text-gray-900 px-4 py-2 rounded-full">Keep it simple</span>
+          <span class="bg-white text-gray-900 px-4 py-2 rounded-full">Take intelligent risks</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-4 mb-12">
+        </div>
+      </section>
+      <div
+        class="absolute -z-10 h-350 w-260 end-0 translate-y-[-25%]"
+        style="
+          background-image: radial-gradient(
+            circle at 100% 50%,
+            #bb404c,
+            transparent,
+            transparent
+          );
+        "
+      ></div>
+      <section class="container mx-auto px-4 py-16 ">
+        <div class="bg-gray-100/5 p-5">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-8 md:mb-0 px-1">
+            <h2 class="text-3xl font-bold mb-4">Start your project with Digitech <ArrowRight className="inline h-6 w-6 text-orange-500" /></h2>
+            <p class="text-gray-400 mb-6">We specialize in creating cloud solutions for products and brands in your company.</p>
+            <div class="flex gap-4">
+              <input type="email" placeholder="Enter your email" class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-md text-white w-full md:w-64" />
+              <button class="bg-blue-400 text-white px-6 py-2 rounded-md transition hover:bg-gray-700">Submit</button>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-end">
+            <img src="img/projectplans.png" alt="Project plans" class="rounded-lg" />
+          </div>
+        </div>
+      </div>
+      </section>
+      
+    </main>
+    <footer class="mx-7 backdrop-blur-md pt-7 mt-16 ">
+      <div class="grid grid-cols-4 mb-5">
+        <div>
+          <h2 class="text-xl">Address</h2>
+          <p class="text-gray-400">123 Main Street, City, Country</p>
+        </div>
+        <div>
+          <h2>Telephone</h2>
+          <p class="text-gray-400">+99 905670114</p>
+        </div>
+        <div>
+          <h2>Quick links</h2>
+          <ul class="text-gray-400">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </div>
+        <div>
+          <h2>Email</h2>
+          <p class="text-gray-400">
+            <a href="mailto:kawinpakokthom@gmail.com">kawinpakokthom@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 pt-12 border-t border-gray-800">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-center md:text-left mb-4 md:mb-0">
+            <p class="text-gray-400">© 2023 DigiTech. All rights reserved.</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 mt-8">
+        <div class="flex justify-center space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
