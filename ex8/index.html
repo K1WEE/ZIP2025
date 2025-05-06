@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+  </head>
+  <body>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-600 p-4 gap-2">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="relative w-64 rounded-3xl p-5 pb-4 bg-whtie bg-white dark:bg-gray-800 shadow-xl">
+          <div class="absolute top-5 left-5 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center opacity-80">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+            </svg>
+          </div>
+          
+          <div class="block mt-8 mb-4 text-right h-16 ">
+            <div id="input" class="block text-gray-400 text-sm h-4"></div>
+            <div id="result" class="block text-gray-800 dark:text-white text-4xl font-light h-11"></div>
+          </div>
+          
+          <div class="grid grid-cols-4 gap-3 *:transition-all duration-300 *:hover:scale-105">
+            <button class="bg-gray-400/40 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">C</button>
+            <button class="text-gray-700 bg-gray-400/40 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">+/-</button>
+            <button class="text-gray-700 bg-gray-400/40 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">%</button>
+            <button class="bg-orange-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">÷</button>
+            
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">7</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">8</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">9</button>
+            <button class="bg-orange-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">x</button>
+            
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">4</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">5</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">6</button>
+            <button class="bg-orange-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">-</button>
+            
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">1</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">2</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">3</button>
+            <button class="bg-orange-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">+</button>
+            
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-24 h-12 rounded-lg col-span-2 flex items-center justify-center text-xl cursor-pointer">0</button>
+            <button class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">.</button>
+            <button class="bg-orange-500 text-white w-12 h-12 rounded-lg flex items-center justify-center text-xl cursor-pointer">=</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
