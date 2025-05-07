@@ -4,7 +4,7 @@ const url = "https://dummyjson.com/quotes";
 const randomQuoteButton = document.querySelector("#random-button");
 const perPage = document.querySelector("#per-page");
 const buttons = document.querySelectorAll(".btn-pp");
-let currentPage = 0;
+let currentPage = 1;
 
 function fetchQuotes() {
   return fetch(url)
@@ -72,23 +72,41 @@ function skipToQuoteUpdate(data) {
   }
 
   buttons.forEach((button, index) => {
+    let total = data.total-(parseInt(perPage.value)-2);
 
     if (index === buttons.length - 1) {
-      button.textContent = data.total-1;
+      button.textContent = total;
       button.style.display = "block";
     }
     else if (index === 0) {
       if (currentPage === 1) {
         button.textContent = 1;
+      }
+      else if(currentPage === total) {
+        button.textContent = currentPage - 3;
       } else {
         button.textContent = currentPage - 1;
       }
     }
     else if (index === 1) {
-      button.textContent = currentPage;
+      if (currentPage === 1) {
+        button.textContent = currentPage + 1;
+      }
+      else if(currentPage === total) {
+        button.textContent = currentPage - 2;
+      } else {
+        button.textContent = currentPage;
+      }
     }
     else if (index === 2) {
-      button.textContent = currentPage + 1;
+      if (currentPage === 1) {
+        button.textContent = currentPage + 2;
+      }
+      else if(currentPage === total) {
+        button.textContent = currentPage - 1;
+      } else {
+        button.textContent = currentPage + 1;
+      }
     }
   });
 }
@@ -97,7 +115,7 @@ function skipToQuoteUpdate(data) {
 
 function displayQuoteContent(quote) {
   const card = document.createElement("div");
-  card.className = "border border-gray-800 rounded-3xl p-4 shadow-md";
+  card.className = "card border border-gray-800 rounded-3xl p-4 shadow-md";
 
   const quoteText = document.createElement("p");
   quoteText.className = "text-lg";
@@ -123,6 +141,7 @@ randomQuoteButton.addEventListener("click", () => {
 
 perPage.addEventListener("change", () => {
   perPageQuotes(perPage.value);
+  skipToQuote(0);
 });
 
 buttons.forEach((button) => {
@@ -130,6 +149,14 @@ buttons.forEach((button) => {
     const buttonValue = event.target.textContent; 
     console.log("Button clicked: " + buttonValue);
     currentPage = parseInt(buttonValue);
-    skipToQuote(buttonValue);
+    skipToQuote(buttonValue-1);
   });
 });
+
+function init() {
+  randomQuote();
+  perPageQuotes(perPage.value);
+  skipToQuote(currentPage-1);
+}
+
+init();
