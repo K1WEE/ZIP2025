@@ -139,7 +139,7 @@ randomQuoteButton.addEventListener("click", () => {
 }
 );
 
-perPage.addEventListener("change", () => {
+perPage.addEventListener("input", () => {
   perPageQuotes(perPage.value);
   skipToQuote(0);
 });
