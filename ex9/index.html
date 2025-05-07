@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <header class="m-6">
+      
+      <h2 class="text-2xl font-bold mb-4">Random Quote</h2>
+      <div class="border border-gray-800 rounded-3xl p-6 flex flex-col gap-4 shadow-lg h-50">
+        <div class="content">
+          <p class="quote text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quod ad eum incidunt consequatur. Maiores ut, non delectus accusamus explicabo, fugit assumenda nesciunt deleniti itaque maxime optio quasi dolores quam?
+          </p>
+        <h3 class="author font-semibold">By Kawin</h3>
+        </div>
+        <button id="random-button" class="ml-auto bg-amber-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-amber-700 cursor-pointer">
+          Random
+        </button>
+      </div>
+    </header>
+    <main class="m-6">
+      <div class="flex justify-between items-center mb-4">
+        <label for="items-per-page" class="text-lg font-medium">Items per page</label>
+        <div class="flex justify-center mt-6">
+          <nav class="flex gap-2">
+            <button class="btn-pp px-3 py-1 border rounded-full bg-gray-200 hover:bg-gray-300">1</button>
+            <button class="btn-pp px-3 py-1 border rounded-full bg-gray-200 hover:bg-gray-300">2</button>
+            <button class="btn-pp px-3 py-1 border rounded-full bg-gray-200 hover:bg-gray-300">3</button>
+            <span class="px-3 py-1">...</span>
+            <button class="btn-pp px-3 py-1 border rounded-full bg-gray-200 hover:bg-gray-300">n</button>
+          </nav>
+        </div>
+        <input
+          id="per-page"
+          type="number"
+          class="border border-gray-400 rounded-md px-2 py-1 w-20 text-center"
+          value="5"
+        />
+      </div>
+
+      <div class="content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example Quote Cards -->
+        <div class="border border-gray-800 rounded-3xl p-4 shadow-md">
+          <p class="text-lg">Lorem ipsum dolor sit amet...</p>
+          <h3 class="text-right font-semibold">By Author</h3>
+        </div>
+        <div class="border border-gray-800 rounded-3xl p-4 shadow-md">
+          <p class="text-lg">Lorem ipsum dolor sit amet...</p>
+          <h3 class="text-right font-semibold">By Author</h3>
+        </div>
+        <div class="border border-gray-800 rounded-3xl p-4 shadow-md">
+          <p class="text-lg">Lorem ipsum dolor sit amet...</p>
+          <h3 class="text-right font-semibold">By Author</h3>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+
+      
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
