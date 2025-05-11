@@ -1,39 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="img/pokeball.svg"/>
+    <link rel="icon" href="img/pokeball.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body class="body-default">
     <header>
       <h1 class="text-center text-5xl mt-4 mb-20 text-[#444] font-bold">
-        P<i class="bg-[url(img/pokeball.svg)] w-7 h-7 inline-block bg-no-repeat"></i>kédex
+        P<i
+          class="bg-[url(img/pokeball.svg)] w-7 h-7 inline-block bg-no-repeat"
+        ></i
+        >kédex
       </h1>
     </header>
     <nav class="text-center mt-3">
-      <h2 class="font-bold text-2xl mb-6 text-blue-700/70 text-shadow-lg">Select Generation:</h2>
-      <div class="links-container table m-auto bg-white shadow-lg">
-        
-      </div>
-      
+      <h2 class="font-bold text-2xl mb-6 text-blue-700/70 text-shadow-lg">
+        Select Generation:
+      </h2>
+      <div class="links-container table m-auto bg-white shadow-lg"></div>
     </nav>
-    <main>
-        <div id="loading-overlay" class="hidden">
-          <div class="loader">
-            <div class="pokeball"></div>
-            <p>Loading...</p>
+    <main class="mt-20">
+      <div id="loading-overlay" class="hidden">
+        <div class="loader">
+          <div class="pokeball"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+      <div
+        class="pokedex grid sm:grid-cols-1 md:grid-cols-3 items-center content-center"
+      ></div>
+
+
+      <!-- <div class="details-view-container">
+        <span class="close-button">&times;</span>
+        <div class="card-container">
+          <div class="card type-grass type-poison">
+            <div class="bg-pokeball"></div>
+            <span class="pokemon-id">#001</span>
+            <div class="card-title">
+              <h2>bulbasaur</h2>
+              <div class="pokemon-types">
+                <span class="type">grass</span><span class="type">poison</span>
+              </div>
+            </div>
+            <div class="pokemon-image">
+              <img
+                alt="bulbasaur"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+              />
+            </div>
           </div>
         </div>
-      <div class="pokedex grid sm:grid-cols-1 md:grid-cols-3 items-center content-center ">
-
-      </div>
-      
+        <div class="details">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+            class="pokemon-image"
+            alt="bulbasaur"
+          />
+          <div class="tabs-switch-container">
+            <button class="tab-switch active">About</button>
+            <button class="tab-switch">Base Stats</button>
+            <button class="tab-switch">Evolution</button>
+          </div>
+          <div class="tab tab-about">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Species</td>
+                  <td>grass, poison</td>
+                </tr>
+                <tr>
+                  <td>Height</td>
+                  <td>70cm</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>6.9kg</td>
+                </tr>
+                <tr>
+                  <td>Abilities</td>
+                  <td>overgrow, chlorophyll</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div> -->
     </main>
-    <footer>
-      
-    </footer>
+    <footer></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

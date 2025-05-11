@@ -1,20 +1,3 @@
-export async function fetchPokemonData(pokemon) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-
-    }
-    catch (error) {
-        console.error(error.message);
-    }
-}
-
 function getImageURL(pokemon) {
     const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other';
 
@@ -56,7 +39,7 @@ export async function pokemonCard(pokemonId) {
                     <div class="pokemon-types">
                         ${types.map(({ type }) =>
         `<span class="type" key="${type.name}">${type.name}</span>`
-            ).join('')}
+    ).join('')}
                     </div>
                 </div>
 
@@ -66,13 +49,6 @@ export async function pokemonCard(pokemonId) {
             </div>
         </div>
     `;
-
-    // เพิ่ม event listener แทนการใช้ onClick ใน innerHTML
-    const newCard = pokedexElement.lastElementChild;
-    newCard.addEventListener('click', function () {
-        // ใส่โค้ด onClick ที่ต้องการ
-        console.log(`Clicked on ${name}`);
-    });
 }
 
 async function getType(Id) {
@@ -102,17 +78,17 @@ export async function displayPokemonByGen(generation) {
         pokedexElement.classList.add('hidden')
         pokedexElement.innerHTML = '';
         const pokemonIds = await getPokemonIDinGen(generation);
-        
+
         pokemonIds.sort((a, b) => a - b);
         console.log(pokemonIds);
         for (const id of pokemonIds) {
-            console.log(id);
             await pokemonCard(id);
         }
+        addCardListeners();
         pokedexElement.classList.remove('hidden')
     } catch (error) {
         console.error("Error displaying Pokémon:", error);
-    }finally{
+    } finally {
         hideLoading();
     }
 }
@@ -134,21 +110,110 @@ async function getPokemonIDinGen(gen) {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
+}
+function addCardListeners() {
+    const cardContainers = document.querySelectorAll('.card');
 
+    cardContainers.forEach(card => {
+        card.addEventListener('click', function () {
+            const idSpan = this.querySelector('.pokemon-id');
+            const pokemonId = idSpan ? parseInt(idSpan.textContent.replace('#', '')) : null;
+            console.log(pokemonId);
+            pokemonInfo(pokemonId);
+        })
+    });
+}
+
+async function pokemonInfo(pokemonId) {
+
+    try {
+        const pokemonData = await fetchPokemonData(pokemonId);
+        console.log(pokemonData)
+        const types = pokemonData.types;
+        const imgURL = getImageURL(pokemonId),
+            classType = types.map(({ type }) => 'type-' + type.name).join(' '),
+            paddedId = '#' + pokemonId.toString().padStart(3, '000'),
+            name = pokemonData.name;
+
+        const modal = document.createElement('div');
+        modal.classList.add('details-view-container')
+        modal.innerHTML = `
+        <span class="close-button">&times;</span>
+        <div class="card-container">
+            <div class="card ${classType}">
+            <div class="bg-pokeball"></div>
+            <span class="pokemon-id">${paddedId}</span>
+            <div class="card-title">
+                <h2>${name}</h2>
+                <div class="pokemon-types">
+                <span class="type">grass</span><span class="type">poison</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="details">
+            <img
+            src="${imgURL}"
+            class="pokemon-image"
+            alt="${name}"
+            />
+            <div class="tabs-switch-container">
+            <button class="tab-switch">About</button>
+            <button class="tab-switch">Base Stats</button>
+            <button class="tab-switch">Evolution</button>
+            </div>
+        </div>
+    `;
+        document.body.appendChild(modal);
+        var span = document.getElementsByClassName("close-button")[0];
+        span.onclick = function () {
+            modal.remove();
+        }
+    } catch (error) {
+        console.error('Error displaying Pokémon infomation :', error);
+    }
+}
+
+async function fetchPokemonData(pokemonId) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        const pokemonData = {
+            name: data.name,
+            types: data.types,
+            height: data.height,
+            weight: data.weight,
+            abilities: data.abilities,
+            stats: data.stats,
+        }
+        return pokemonData;
+    } catch (error) {
+        console.error('Error :', error);
+    }
+}
+
+function addDetailListeners() {
+    const detailTabs = document.querySelectorAll('.tab-switch')
+
+    detailTabs.forEach(detail => {
+        detail.addEventListener('click', () => {
+
+        })
+    });
 }
 
 function showLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     loadingOverlay.classList.remove('hidden');
-    
-    // ปิดกั้นการ scroll ของหน้าเว็บด้วย
     document.body.style.overflow = 'hidden';
 }
 
-  function hideLoading() {
+function hideLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     loadingOverlay.classList.add('hidden');
-    
-    // อนุญาตให้ scroll ได้อีกครั้ง
     document.body.style.overflow = '';
-  }
+}

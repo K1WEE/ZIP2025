@@ -1,6 +1,6 @@
 import './style.css'
 import {fetchGenerationData} from './generation.js'
-import {fetchPokemonData ,
+import {
         pokemonCard,
       displayPokemonByGen}from './pokemon.js'
 
@@ -37,15 +37,15 @@ function addButtonListeners() {
       console.log("clicked :", id);
       
       displayPokemonByGen(id)
+      
     });
   });
 }
 
 
 
-
 displayGenerations(generations);
-pokemonCard(1);
+displayPokemonByGen(1);
 
 
 
