@@ -125,7 +125,6 @@ function addCardListeners() {
 }
 
 async function pokemonInfo(pokemonId) {
-
     try {
         const pokemonData = await fetchPokemonData(pokemonId);
         console.log(pokemonData)
@@ -134,6 +133,10 @@ async function pokemonInfo(pokemonId) {
             classType = types.map(({ type }) => 'type-' + type.name).join(' '),
             paddedId = '#' + pokemonId.toString().padStart(3, '000'),
             name = pokemonData.name;
+
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        document.body.appendChild(overlay);
 
         const modal = document.createElement('div');
         modal.classList.add('details-view-container')
@@ -158,17 +161,23 @@ async function pokemonInfo(pokemonId) {
             alt="${name}"
             />
             <div class="tabs-switch-container">
-            <button class="tab-switch">About</button>
+            <button class="tab-switch active">About</button>
             <button class="tab-switch">Base Stats</button>
             <button class="tab-switch">Evolution</button>
             </div>
+            <div class="tab">
+            </div>
         </div>
+        
     `;
         document.body.appendChild(modal);
         var span = document.getElementsByClassName("close-button")[0];
         span.onclick = function () {
             modal.remove();
+            overlay.remove();
         }
+        getAbout(pokemonData);
+        addDetailListeners(pokemonData);
     } catch (error) {
         console.error('Error displaying Pokémon infomation :', error);
     }
@@ -196,14 +205,118 @@ async function fetchPokemonData(pokemonId) {
     }
 }
 
-function addDetailListeners() {
+function addDetailListeners(pokemonData) {
     const detailTabs = document.querySelectorAll('.tab-switch')
 
-    detailTabs.forEach(detail => {
+    detailTabs.forEach((detail,index) => {
         detail.addEventListener('click', () => {
-
+            detailTabs.forEach(dt => {
+                dt.classList.remove('active');
+            });
+            if(index === 0){
+                console.log('about');
+                detail.classList.add('active');
+                getAbout(pokemonData);
+            }else if(index === 1){
+                console.log('stats');
+                detail.classList.add('active');
+                getStats(pokemonData);
+            }else if(index === 2){
+                console.log('evolution');
+                detail.classList.add('active');
+            }
         })
     });
+}
+
+function getAbout(pokemonData){
+    const types = pokemonData.types.map( ( { type } ) => type.name ).join( ', ' );
+    const abilities = pokemonData.abilities.map( ( { ability } ) => {
+		return ability.name.replace( '-', ' ' );
+	} ).join( ', ' );
+    const height = pokemonData.height * 10; // cm
+	const weight = pokemonData.weight / 10; // kg
+
+    const detailsElement = document.querySelector('.tab');
+    detailsElement.classList.remove('tab-stats','tab-evolution');
+    detailsElement.classList.add('tab-about');
+    detailsElement.innerHTML = `
+                <table>
+				<tbody>
+					<tr>
+						<td>Species</td>
+						<td>${ types }</td>
+					</tr>
+
+					<tr>
+						<td>Height</td>
+						<td>${ height }cm</td>
+					</tr>
+
+					<tr>
+						<td>Weight</td>
+						<td>${ weight }kg</td>
+					</tr>
+
+					<tr>
+						<td>Abilities</td>
+						<td>${ abilities }</td>
+					</tr>
+				</tbody>
+			</table>
+            `;
+}
+
+function getStats(pokemonData){
+    const labels = [
+        'HP',
+        'Attack',
+        'Defense',
+        'Sp. Atk',
+        'Sp. Def',
+        'Speed',
+    ];
+    const stats = pokemonData.stats;
+    const total = stats.reduce( ( sum, current ) => sum + parseInt( current.base_stat ), 0 );
+    const detailsElement = document.querySelector('.tab');
+    detailsElement.classList.remove('tab-about','tab-evolution');
+    detailsElement.classList.add('tab-stats');
+    detailsElement.innerHTML = '';
+
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+    
+    labels.forEach((label, i) => {
+        const tr = document.createElement('tr');
+        
+        const labelTd = document.createElement('td');
+        labelTd.textContent = label;
+
+        const valueTd = document.createElement('td');
+        valueTd.textContent = stats[i].base_stat;
+
+        const rangeView = RangeView(stats[i].base_stat);
+        console.log(rangeView);
+        valueTd.innerHTML += rangeView;
+
+        tr.appendChild(labelTd);
+        tr.appendChild(valueTd);
+
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+
+    detailsElement.appendChild(table);
+}
+
+function RangeView(value = 50, max = 100 ){
+    const percent = parseInt( value ) / parseInt( max ) * 100;
+	const colorClass = percent >= 50 ? 'range-view-positive' : 'range-view-negative';
+
+	return (`
+		<div class="range-view ${ colorClass }" style=" --percent : ${ percent }% " />`
+	);
 }
 
 function showLoading() {
