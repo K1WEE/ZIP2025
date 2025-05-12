@@ -8,7 +8,6 @@ const generations = await fetchGenerationData();
 
 function displayGenerations(generations) {
     const container = document.querySelector('main');
-    console.log(generations[0])
     generations.forEach((generation,index) => {
       const generationDiv= document.querySelector('nav >.links-container');
       let generationName = generation['name'].replace(/generation-/g, '');
@@ -40,6 +39,15 @@ function addButtonListeners() {
       
     });
   });
+}
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('dark');
+  if (document.documentElement.classList.contains('dark')) {
+    localStorage.theme = 'dark';
+  } else {
+    localStorage.theme = 'light';
+  }
 }
 
 

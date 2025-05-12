@@ -77,19 +77,14 @@ async function getType(Id) {
 }
 
 export async function displayPokemonByGen(generation) {
-    showLoading();
     try {
         const pokemonIds = await getPokemonIDinGen(generation);
-
         pokemonIds.sort((a, b) => a - b);
-        console.log(pokemonIds);
+        // console.log(pokemonIds);
         configFordisplay(pokemonIds);
-        addCardListeners();
-        
+
     } catch (error) {
         console.error("Error displaying Pokémon:", error);
-    } finally {
-        hideLoading();
     }
 }
 
@@ -111,7 +106,7 @@ async function getPokemonIDinGen(gen) {
         console.error('Error fetching data:', error);
     }
 }
-function addCardListeners() {
+export function addCardListeners() {
     const cardContainers = document.querySelectorAll('.card');
 
     cardContainers.forEach(card => {

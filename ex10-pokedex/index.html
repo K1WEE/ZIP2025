@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body class="body-default">
+  <body class="bg-(image:--background-light) dark:bg-(image:--background-dark)">
     <header>
-      <h1 class="text-center text-5xl mt-4 mb-20 text-[#444] font-bold">
+      <h1 class="text-center text-5xl mt-4 mb-20 text-[#444] font-bold dark:text-white">
         P<i
           class="bg-[url(img/pokeball.svg)] w-7 h-7 inline-block bg-no-repeat"
         ></i
@@ -32,11 +32,8 @@
         <label for="items-per-page" class="text-lg font-medium text-blue-700/70">Items per page</label>
         <div class="flex justify-center mt-6">
           <nav class="flex gap-2">
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">1</button>
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">2</button>
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">3</button>
-            <span class="px-3 py-1">...</span>
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">n</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">Previous</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">Next</button>
           </nav>
         </div>
         <input
@@ -50,62 +47,6 @@
         class="pokedex grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center content-center"
       ></div>
 
-
-      <!-- <div class="details-view-container">
-        <span class="close-button">&times;</span>
-        <div class="card-container">
-          <div class="card type-grass type-poison">
-            <div class="bg-pokeball"></div>
-            <span class="pokemon-id">#001</span>
-            <div class="card-title">
-              <h2>bulbasaur</h2>
-              <div class="pokemon-types">
-                <span class="type">grass</span><span class="type">poison</span>
-              </div>
-            </div>
-            <div class="pokemon-image">
-              <img
-                alt="bulbasaur"
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="details">
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-            class="pokemon-image"
-            alt="bulbasaur"
-          />
-          <div class="tabs-switch-container">
-            <button class="tab-switch active">About</button>
-            <button class="tab-switch">Base Stats</button>
-            <button class="tab-switch">Evolution</button>
-          </div>
-          <div class="tab tab-about">
-            <table>
-              <tbody>
-                <tr>
-                  <td>Species</td>
-                  <td>grass, poison</td>
-                </tr>
-                <tr>
-                  <td>Height</td>
-                  <td>70cm</td>
-                </tr>
-                <tr>
-                  <td>Weight</td>
-                  <td>6.9kg</td>
-                </tr>
-                <tr>
-                  <td>Abilities</td>
-                  <td>overgrow, chlorophyll</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div> -->
     </main>
     <footer></footer>
     <script type="module" src="/src/main.js"></script>
