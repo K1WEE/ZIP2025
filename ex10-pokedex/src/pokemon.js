@@ -113,7 +113,6 @@ export function addCardListeners() {
         card.addEventListener('click', function () {
             const idSpan = this.querySelector('.pokemon-id');
             const pokemonId = idSpan ? parseInt(idSpan.textContent.replace('#', '')) : null;
-            console.log(pokemonId);
             pokemonInfo(pokemonId);
         })
     });
@@ -122,7 +121,7 @@ export function addCardListeners() {
 async function pokemonInfo(pokemonId) {
     try {
         const pokemonData = await fetchPokemonData(pokemonId);
-        console.log(pokemonData)
+        // console.log(pokemonData)
         const types = pokemonData.types;
         const imgURL = getImageURL(pokemonId),
             classType = types.map(({ type }) => 'type-' + type.name).join(' '),
@@ -214,17 +213,14 @@ function addDetailListeners(pokemonData) {
                 dt.classList.remove('active');
             });
             if(index === 0){
-                console.log('about');
                 detail.classList.add('active');
                 getAbout(pokemonData);
             }else if(index === 1){
-                console.log('stats');
                 detail.classList.add('active');
                 getStats(pokemonData);
             }else if(index === 2){
-                console.log('evolution');
                 detail.classList.add('active');
-                fetchEvolution(pokemonData.id);
+                getEvolution(pokemonData.id);
             }
         })
     });
@@ -309,6 +305,12 @@ function getStats(pokemonData){
 
     detailsElement.appendChild(table);
 }
+function getEvolution(pokemonId){
+    const detailsElement = document.querySelector('.tab');
+    detailsElement.classList.remove('tab-about','tab-evolution');
+    detailsElement.classList.add('tab-stats');
+    detailsElement.innerHTML = 'Comming Soon!';
+}
 
 function RangeView(value = 50, max = 100 ){
     const percent = parseInt( value ) / parseInt( max ) * 100;
@@ -319,9 +321,6 @@ function RangeView(value = 50, max = 100 ){
 	);
 }
 
-function getEvolution(){
-
-}
 
 async function fetchEvolution(pokemonId){
     try {

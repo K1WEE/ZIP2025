@@ -33,7 +33,7 @@ function addButtonListeners() {
         }
       });
       const id = (button.id.split('-'))[1]
-      console.log("clicked :", id);
+      // console.log("clicked :", id);
       
       displayPokemonByGen(id)
       

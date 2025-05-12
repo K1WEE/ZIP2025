@@ -58,7 +58,7 @@ function pagebtnChange() {
 }
 
 perPage.addEventListener("input", () => {
-    console.log(perPage.value);
+    // console.log(perPage.value);
     configFordisplay(pokemon);
 });
 
@@ -69,7 +69,7 @@ buttons.forEach((button) => {
             currentPage+=1;
         }
         offset = (currentPage - 1) * perPage.value;
-        console.log("Button clicked: " + offset, buttonValue);
+        // console.log("Button clicked: " + offset, buttonValue);
         pagebtnChange();
         pageDisplay(pokemon);
     });
