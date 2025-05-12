@@ -28,8 +28,26 @@
           <p>Loading...</p>
         </div>
       </div>
+      <div class="flex justify-between items-center mb-4 mx-6 ">
+        <label for="items-per-page" class="text-lg font-medium text-blue-700/70">Items per page</label>
+        <div class="flex justify-center mt-6">
+          <nav class="flex gap-2">
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">1</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">2</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">3</button>
+            <span class="px-3 py-1">...</span>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">n</button>
+          </nav>
+        </div>
+        <input
+          id="per-page"
+          type="number"
+          class="border border-black rounded-md px-2 py-1 w-20 text-center"
+          value="5"
+        />
+      </div>
       <div
-        class="pokedex grid sm:grid-cols-1 md:grid-cols-3 items-center content-center"
+        class="pokedex grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center content-center"
       ></div>
 
 

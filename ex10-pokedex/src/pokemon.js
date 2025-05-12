@@ -1,3 +1,7 @@
+import { pageDisplay ,
+    configFordisplay
+} from './filter.js'
+
 function getImageURL(pokemon) {
     const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other';
 
@@ -68,24 +72,20 @@ async function getType(Id) {
     }
     catch (error) {
         console.error(error.message);
+        return null;
     }
 }
 
 export async function displayPokemonByGen(generation) {
     showLoading();
     try {
-        const pokedexElement = document.querySelector('main > .pokedex');
-        pokedexElement.classList.add('hidden')
-        pokedexElement.innerHTML = '';
         const pokemonIds = await getPokemonIDinGen(generation);
 
         pokemonIds.sort((a, b) => a - b);
         console.log(pokemonIds);
-        for (const id of pokemonIds) {
-            await pokemonCard(id);
-        }
+        configFordisplay(pokemonIds);
         addCardListeners();
-        pokedexElement.classList.remove('hidden')
+        
     } catch (error) {
         console.error("Error displaying Pokémon:", error);
     } finally {
@@ -144,7 +144,7 @@ async function pokemonInfo(pokemonId) {
         <span class="close-button">&times;</span>
         <div class="card-container">
             <div class="card ${classType}">
-            <div class="bg-pokeball"></div>
+            <div class="bg-pokeball"><img alt="pokeball" src="img/pokeball.png" loading="lazy" /></div>
             <span class="pokemon-id">${paddedId}</span>
             <div class="card-title">
                 <h2>${name}</h2>
@@ -176,6 +176,10 @@ async function pokemonInfo(pokemonId) {
             modal.remove();
             overlay.remove();
         }
+        overlay.onclick = function () {
+            modal.remove();
+            overlay.remove();
+        }
         getAbout(pokemonData);
         addDetailListeners(pokemonData);
     } catch (error) {
@@ -192,6 +196,7 @@ async function fetchPokemonData(pokemonId) {
         }
         const data = await response.json();
         const pokemonData = {
+            id: data.id,
             name: data.name,
             types: data.types,
             height: data.height,
@@ -224,6 +229,7 @@ function addDetailListeners(pokemonData) {
             }else if(index === 2){
                 console.log('evolution');
                 detail.classList.add('active');
+                fetchEvolution(pokemonData.id);
             }
         })
     });
@@ -296,7 +302,6 @@ function getStats(pokemonData){
         valueTd.textContent = stats[i].base_stat;
 
         const rangeView = RangeView(stats[i].base_stat);
-        console.log(rangeView);
         valueTd.innerHTML += rangeView;
 
         tr.appendChild(labelTd);
@@ -319,13 +324,37 @@ function RangeView(value = 50, max = 100 ){
 	);
 }
 
-function showLoading() {
+function getEvolution(){
+
+}
+
+async function fetchEvolution(pokemonId){
+    try {
+        const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`
+        const response = await fetch(url);
+        if (!response.ok){
+            console.error("Could not find evolution");
+        }
+        const data = await response.json();
+        console.log(data.evolution_chain['url']);
+        // if (data.evolution_chain != null){
+        //     console.log(data.evolution_chain[0]);
+        // } else{
+        //     console.log(data.evolution_chain)
+        // }
+
+    } catch (error) {
+        
+    }
+}
+
+export function showLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     loadingOverlay.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
 
-function hideLoading() {
+export function hideLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     loadingOverlay.classList.add('hidden');
     document.body.style.overflow = '';

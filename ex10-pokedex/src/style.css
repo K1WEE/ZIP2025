@@ -309,7 +309,7 @@
     max-height: 100vh;
     max-width: 800px;
     width: 95vw;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%, 0%);
     display: flex;
@@ -527,6 +527,38 @@
 
     .details .tab {
       font-size: 0.8rem;
+    }
+  }
+  @keyframes pull-up-center {
+    from {
+      transform: translateY(50%) translateX(-50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pull-down-center {
+    from {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(50%) translateX(-50%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pull-up {
+    from {
+      transform: translateY(10%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }
