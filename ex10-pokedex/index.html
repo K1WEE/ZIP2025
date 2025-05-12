@@ -16,10 +16,10 @@
       </h1>
     </header>
     <nav class="text-center mt-3">
-      <h2 class="font-bold text-2xl mb-6 text-blue-700/70 text-shadow-lg">
+      <h2 class="font-bold text-2xl mb-6 text-blue-700/70 dark:text-blue-400 text-shadow-lg">
         Select Generation:
       </h2>
-      <div class="links-container table m-auto bg-white shadow-lg"></div>
+      <div class="links-container table m-auto text-gray-600  bg-white shadow-lg dark:bg-black/30 dark:text-white"></div>
     </nav>
     <main class="mt-20">
       <div id="loading-overlay" class="hidden">
@@ -29,22 +29,22 @@
         </div>
       </div>
       <div class="flex justify-between items-center mb-4 mx-6 ">
-        <label for="items-per-page" class="text-lg font-medium text-blue-700/70">Items per page</label>
+        <label for="items-per-page" class="text-lg font-medium text-blue-700/70 dark:text-blue-200/70">Items per page</label>
         <div class="flex justify-center mt-6">
           <nav class="flex gap-2">
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">Previous</button>
-            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105">Next</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105 dark:text-white">Previous</button>
+            <button class="btn-pp px-3 py-1 border rounded-full text-shadow-lg cursor-pointer hover:scale-105 dark:text-white">Next</button>
           </nav>
         </div>
         <input
           id="per-page"
           type="number"
-          class="border border-black rounded-md px-2 py-1 w-20 text-center"
+          class="border bg-gray-500/20 border-black dark:border-white dark:text-white rounded-md px-2 py-1 w-20 text-center"
           value="5"
         />
       </div>
       <div
-        class="pokedex grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center content-center"
+        class="pokedex grid sm:grid-cols-1 md:grid-cols-3  items-center content-center"
       ></div>
 
     </main>
