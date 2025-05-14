@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {ActivatedRoute, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -9,8 +9,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './infomation.component.css'
 })
 export class InfomationComponent {
-  id = input('');
-  index = parseInt(this.id());
+  id: string = '0';
+  pokemon: any;
+  types: string[] = [];
+
   info = [
     {
       id: '001',
@@ -84,8 +86,24 @@ export class InfomationComponent {
     background: 'bg-blue-400' ,
     img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/8.svg',
     }
-
   ]
-  pokemon = this.info[this.index]; 
-  types = this.pokemon.type;
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const idParam = params.get('id');
+      if (idParam !== null) {
+        const index = parseInt(idParam)-1;
+        
+        if (index >= 0 && index < this.info.length) {
+          this.pokemon = this.info[index];
+        } else {
+          this.pokemon = this.info[0];
+        }
+        
+        this.id = idParam;
+        this.types = this.pokemon.type;
+      }
+    });
+  }
 }
