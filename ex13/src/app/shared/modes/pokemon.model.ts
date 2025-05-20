@@ -8,6 +8,7 @@ export interface pokemonList{
     id: number
     types: string[];
     img: string;
+    className: string;
 }
 
 export interface Pokemon {
