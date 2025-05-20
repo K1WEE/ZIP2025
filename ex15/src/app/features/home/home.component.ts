@@ -15,6 +15,7 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  accessToken = localStorage.getItem('access_token');
   pokemonList = signal<pokemonList[]>([]); 
   loading = signal<boolean>(false);
 
