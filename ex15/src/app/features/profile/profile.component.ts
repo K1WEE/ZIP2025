@@ -23,4 +23,8 @@ export class ProfileComponent {
       }
     })
   }
+
+  logout() {
+    this.#authServices.logout();
+  }
 }
