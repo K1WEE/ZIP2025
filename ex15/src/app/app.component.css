@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+    .bg-img-light {
+        background-image: linear-gradient(0deg,
+                hsla(0, 0%, 100%, 0.75),
+                hsla(0, 0%, 100%, 0.75))
+            url(/bg.jpg);
+    }
+
+}
