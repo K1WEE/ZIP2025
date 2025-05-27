@@ -25,7 +25,7 @@ export class UsersService {
         return this.userRepository.save(user);
     }
 
-    async update(email: string, user: Partial<User>): Promise<User> {
+    async update(email: string, user: User): Promise<User> {
         const existingUser = await this.findOne(email);
         if (!existingUser) {
             throw new Error('User not found');

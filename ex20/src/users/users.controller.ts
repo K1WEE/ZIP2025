@@ -22,7 +22,7 @@ export class UsersController {
   }
 
   @Patch(':email')
-  update(@Param('email') email: string, @Body() user: Partial<User>) {
+  update(@Param('email') email: string, @Body() user: User) {
     return this.usersService.update(email, user);
   }
 
