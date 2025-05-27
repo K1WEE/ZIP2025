@@ -6,16 +6,16 @@ export const databaseProviders = [
         provide: 'DATA_SOURCE',
         useFactory: async (configService: ConfigService) => {
             const dataSource = new DataSource({
-                type: configService.get<string>('DB_TYPE') as any,
-                host: configService.get<string>('DB_HOST'),
-                port: configService.get<number>('DB_PORT'),
-                username: configService.get<string>('DB_USERNAME'),
-                password: configService.get<string>('DB_PASSWORD'),
-                database: configService.get<string>('DB_DATABASE'),
+                type: process.env.DB_TYPE as any,
+                host: process.env.DB_HOST,
+                port: Number(process.env.DB_PORT),
+                username: process.env.DB_USERNAME,
+                password: process.env.DB_PASSWORD,
+                database: process.env.DB_DATABASE,
                 entities: [
                     __dirname + '/../**/*.entity{.ts,.js}',
                 ],
-                synchronize: configService.get<boolean>('DB_SYNCHRONIZE'),
+                synchronize: process.env.DB_SYNCHRONIZE === 'true',
             });
             return dataSource.initialize();
         },
