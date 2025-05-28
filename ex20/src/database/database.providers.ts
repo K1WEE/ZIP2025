@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 export const databaseProviders = [
     {
         provide: 'DATA_SOURCE',
-        useFactory: async (configService: ConfigService) => {
+        useFactory: async () => {
             const dataSource = new DataSource({
                 type: process.env.DB_TYPE as any,
                 host: process.env.DB_HOST,
