@@ -25,17 +25,21 @@ export class UsersService {
         return this.userRepository.save(user);
     }
 
-    async update(email: string, user: User): Promise<User> {
+    async update(email: string, user: User): Promise<User | null> {
         const existingUser = await this.findOne(email);
         if (!existingUser) {
             throw new Error('User not found');
         }
-        const updatedUser = { ...existingUser, ...user };
+
+        const updateData: Partial<User> = { ...user };
         if (user.password) {
             const saltRounds = 10;
-            updatedUser.password = await bcrypt.hash(user.password, saltRounds);
+            updateData.password = await bcrypt.hash(user.password, saltRounds);
         }
-        return this.userRepository.save(updatedUser);
+
+        await this.userRepository.update({ email }, updateData);
+
+        return this.findOne(email);
     }
 
     async remove(email: string): Promise<void> {
