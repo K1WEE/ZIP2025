@@ -39,7 +39,7 @@ export class UsersService {
 
         await this.userRepository.update({ email }, updateData);
 
-        return this.findOne(email);
+        return this.findOne(updateData.email || email);
     }
 
     async remove(email: string): Promise<void> {
