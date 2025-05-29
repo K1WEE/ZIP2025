@@ -37,9 +37,13 @@ export class UsersService {
             updateData.password = await bcrypt.hash(user.password, saltRounds);
         }
 
-        await this.userRepository.update({ email }, updateData);
+        if (await this.userRepository.update({ email }, updateData)){
+            console.log('Update successful', updateData,{ email });
+            // If the update was successful, return the updated user
+            return this.findOne(email);
+        }
 
-        return this.findOne(updateData.email || email);
+        throw new Error('Update failed');
     }
 
     async remove(email: string): Promise<void> {

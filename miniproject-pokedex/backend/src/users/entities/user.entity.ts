@@ -17,6 +17,9 @@ export class User {
     @Column()
     is_active: boolean;
 
+    @Column('simple-json', { nullable: true })
+    favorite_pokemon_ids: number[];
+
     //  i can't use CreateDateColumn , i test and it doesn't work .
     @Column({ 
         type: 'timestamp',
