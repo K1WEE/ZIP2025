@@ -16,7 +16,6 @@ export class UsersController {
   @Get('me')
   findOne(@Request() req) {
     const email = req.user.email; 
-    console.log('Fetching user:', req.user);
     return this.usersService.findOne(email);
   }
 
@@ -28,7 +27,6 @@ export class UsersController {
   @Patch('')
   update(@Request() req, @Body() userinfo: User) {
     const email = req.user.email;
-    console.log('Updating user:', email, userinfo);
     return this.usersService.update(email, userinfo);
   }
 
