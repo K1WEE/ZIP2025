@@ -1,8 +1,9 @@
 
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, UnauthorizedException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
+import { ExceptionsHandler } from '@nestjs/core/exceptions/exceptions-handler';
 
 @Injectable()
 export class UsersService {
@@ -20,6 +21,12 @@ export class UsersService {
     }
 
     async create(user: User): Promise<User> {
+        const email = user.email;
+        const existingUser = await this.userRepository.findOne({ where: { email } });
+        console.log('Creating user:', user);
+        if (existingUser) {
+            throw new UnauthorizedException('User already exists');
+        }
         const saltRounds = 10;
         user.password = await bcrypt.hash(user.password, saltRounds);
         return this.userRepository.save(user);

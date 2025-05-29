@@ -1,7 +1,7 @@
 import { HttpClient, httpResource } from '@angular/common/http';
 import { inject, Injectable, Resource } from '@angular/core';
-import { ApiResponse } from '../../modes/response.model';
-import { Pokemon, ResourceList } from '../../modes/pokemon.model';
+import { ApiResponse } from '../../models/response.model';
+import { Pokemon, ResourceList } from '../../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'

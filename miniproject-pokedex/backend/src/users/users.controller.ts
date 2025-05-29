@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { User } from './entities/user.entity';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
-@UseGuards(JwtAuthGuard)
+
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
@@ -12,7 +12,7 @@ export class UsersController {
   // findAll() {
   //   return this.usersService.findAll();
   // }
-
+  @UseGuards(JwtAuthGuard)
   @Get('me')
   findOne(@Request() req) {
     const email = req.user.email; 
@@ -24,6 +24,7 @@ export class UsersController {
     return this.usersService.create(User);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Patch('')
   update(@Request() req, @Body() userinfo: User) {
     const email = req.user.email;

@@ -18,19 +18,34 @@ export class AuthService {
         private Jwtservice: JwtService,
     ) { }
 
-    async validateUser(username: string, pass: string): Promise<any> {
-        const user = await this.usersService.findOne(username);
-        if (user && await bcrypt.compare(pass, user.password)) {
-            const { password, ...result } = user;
-            return result;
+    async validateUser(email: string, password: string): Promise<any> {
+        const user = await this.usersService.findOne(email);
+        
+        if (!user) {
+            throw new UnauthorizedException('User not found');
         }
-        return null;
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            throw new UnauthorizedException('Invalid password');
+        }
+
+        const { password: _, ...result } = user;
+        return result;
     }
 
     async login(user: User) {
-        const payload = { name: user.first_name, email: user.email };
+        const payload = { 
+            name: user.first_name, 
+            email: user.email 
+        };
+        
         return {
             access_token: this.Jwtservice.sign(payload),
+            user: {
+                email: user.email,
+                first_name: user.first_name,
+            }
         };
     }
 }
